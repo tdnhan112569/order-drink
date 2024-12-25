@@ -19,9 +19,13 @@ class GoogleAuthHelper {
     // Once signed in, return the UserCredential
     var output = await FirebaseAuth.instance.signInWithCredential(credential);
     if (kDebugMode) {
-      print("${output}here");
+      print("$output");
     }
     return output;
+  }
+
+  static void signOut() async {
+    FirebaseAuth.instance.signOut();
   }
 
 }

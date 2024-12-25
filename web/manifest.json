@@ -1,6 +1,6 @@
 {
-    "name": "order_cart",
-    "short_name": "order_cart",
+    "name": "Order thôi mà",
+    "short_name": "Order thôi mà",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
