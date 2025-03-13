@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'application.dart';
 
 void main() async {
+  // Hello form us
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(
