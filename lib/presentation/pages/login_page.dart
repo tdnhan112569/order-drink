@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image(
-                      image: AssetImage("images/sign_in_google.png"),
+                      image: AssetImage("images/sign_in_google.jpg"),
                       fit: BoxFit.contain,
                       height: 50,
                     )
