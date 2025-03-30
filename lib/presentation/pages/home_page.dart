@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:order_cart/controller/user_auth_controller.dart';
+import 'package:get/get.dart';
+import 'package:order_cart/presentation/widgets/app_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,24 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        leadingWidth: 100,
-        title: Text("Xin chào, ${UserAuthController.to.currentUser?.displayName ?? ""}"),
-        centerTitle: true,
-        actions: [
-          SizedBox(width: 20,),
-          CircleAvatar(
-            radius: 20,
-            child: ClipRRect(borderRadius: BorderRadius.circular(10),child: Image.network(UserAuthController.to.currentUser?.photoURL ?? "", fit: BoxFit.fill ),),
-          ),
-          SizedBox(width: 6,),
-          IconButton(
-            icon: Icon(Icons.logout, size: 25),
-            onPressed: UserAuthController.to.signOut,
-          ),
-          SizedBox(width: 20,)
-        ],
-      ),
+      appBar: AppBarCommon(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -45,10 +29,20 @@ class HomePage extends StatelessWidget {
                     crossAxisCount: 4,
                     children: <Widget>[
                       Card(
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          color: Colors.teal[100],
-                          child: const Text("Tạo nhóm đặt chung"),
+                        elevation: 8, // Controls the shadow depth
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        shadowColor: Colors.black54,
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed("/order");
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(8),
+                            color: Colors.teal[100],
+                            child: const Text("Tạo nhóm đặt chung"),
+                          ),
                         ),
                       ),
                       Card(

@@ -40,6 +40,8 @@ dependencies:
   web: ^1.1.0
   firebase_auth: ^5.3.4
   get: ^4.6.6
+  cached_network_image: ^3.4.1
+  currency_formatter: ^2.2.2
 
 dev_dependencies:
   flutter_test:

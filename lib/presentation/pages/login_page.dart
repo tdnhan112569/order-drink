@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:order_cart/controller/user_auth_controller.dart';
 
@@ -11,10 +12,9 @@ class LoginPage extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         fit: StackFit.expand,
         children: [
-          Image(
-            image: NetworkImage("https://i.pinimg.com/originals/b6/1a/4d/b61a4d35d350173b05f458b73c2f0997.gif"),
-            repeat: ImageRepeat.repeat,
-            fit: BoxFit.fill,
+          CachedNetworkImage(
+            imageUrl: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTRvZ3F0NGR5Nmp5cnZzNzVhOTJqc2drNjRmNmpqbzJwc3ZtamJ2eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/e3CNBJ8esWy9Jt0wVL/giphy.gif",
+            fit: BoxFit.cover,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30),
@@ -27,9 +27,6 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Icon(Icons.login, size: 50,),
-                    // SizedBox(width: 20,),
-                    // Text("Sign-in with Google!")
                     Image(
                       image: AssetImage("images/sign_in_google.png"),
                       fit: BoxFit.contain,
@@ -40,7 +37,6 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
     );

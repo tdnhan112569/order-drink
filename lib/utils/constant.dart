@@ -1,0 +1,1 @@
+const BASE_URL_FUCK_DARGON = "https://api-crownx.winmart.vn/plg/api/web/item/category?pageNumber=1&pageSize=40&slug=...&storeCode=2070";
