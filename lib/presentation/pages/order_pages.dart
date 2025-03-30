@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:animated_shimmer/animated_shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:currency_formatter/currency_formatter.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +46,28 @@ class OrderPages extends GetView<ProductController> {
                 cacheKey: item.imgUrl,
                 memCacheHeight: 360,
                 memCacheWidth: 250,
+                placeholder: (context, url) => const AnimatedShimmer(
+                  width: 150,
+                  height: 150,
+                  borderRadius: BorderRadius.all(Radius.circular(75)),
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error, color: Colors.red,),
+                errorListener: (e) {
+                  if (e is SocketException) {
+                    debugPrint(
+                        'Error with ${e.address} and message ${e.message}');
+                  } else {
+                    debugPrint('Image Exception is: ${e.runtimeType}');
+                  }
+                },
+                imageBuilder: (context, imageProvider) => Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
               ),
               Text(item.productName),
               Text(CurrencyFormatter.format(item.price, currencyFormat))
