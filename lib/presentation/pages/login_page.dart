@@ -31,7 +31,11 @@ class LoginPage extends StatelessWidget {
                       image: AssetImage("images/sign_in_google.jpg"),
                       fit: BoxFit.contain,
                       height: 50,
-                    )
+                    ),
+                    CachedNetworkImage(
+                      imageUrl: "https://png.pngtree.com/png-clipart/20230804/original/pngtree-vector-login-icon-login-design-shadow-vector-picture-image_9501563.png",
+                      fit: BoxFit.contain,
+                    ),
                   ],
                 ),
               ),
